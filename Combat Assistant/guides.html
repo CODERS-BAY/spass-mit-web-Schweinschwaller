@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>CombatAssistant</title>
+        <meta charset="utf-8" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <header>
+            <div class="headerbanner">
+                <h1 id="h1combat">Combat</h1>
+                <br />
+                <h1 id="h1assitent">Assistant</h1>
+            </div>
+
+            <nav class="navtop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="combat.html">Combat</a></li>
+                    <li><a href="guides.html" class="aktuell">Guides</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+            <script src="js/topButton.js"></script>
+
+            <section class="guides">
+                <ul>
+                    <li>
+                        <article id="guideguide">
+                            <details>
+                                <summary class="guidesummary"><h1><ins>Guides for game master and player</ins></h1></summary>
+                                <p>
+                                    Here are checked guides for the game master how to use the combat assistant effective. 
+                                </p>
+                            </details>
+                        </article>
+                    </li>
+                    
+                    <li>
+                        <article id="howcombatworks">
+                            <details>
+                                <summary class="guidesummary"><h1><ins>How to use the combat assistant</ins></h1></summary>
+                                <p>
+                                    On <a href="combat.html">COMBAT</a> you can add the combatants. Name them give them initiative, hit points and armor class (as a reminder) and chose player or non player character (not working now).  
+                                </p>
+
+                                <img class="guideimg" src="img/showStatusOptionBtn.png" alt="show status option button" >
+                                <p>
+                                    With this button you can set one or more status to the combatant.
+                                </p>
+
+                                <img class="guideimg" src="img/addCombatantBtn.png" alt="add combatant button">
+                                <p>
+                                    When you click on this button you add the combatant to the list of combatants. the formula will be back blank (not the status formula). 
+                                    Repeat until all Combatants were done. 
+                                </p>
+        
+                                <img class="guideimg" src="img/startCombatBtn.png" alt="start combatant button">
+                                <p>
+                                    To start the Combat, click the red button in the lower left corner of the side. 
+                                </p>
+                                <img class="guideimg" src="img/combatants.png" alt="list of the combatants">
+                                <p>
+                                    Now you see your Combatants (Ini,Name,AC,HP(C/MAX), Status). 
+                                    That one that is gray is the active Combatant. 
+                                    
+                                </p>
+                                <img class="guideimg" src="img/rangeBtn.png" alt="range button as a lifebar">
+                                <p>
+                                    Under every Combatant is a range button.
+                                    With that you can change the currently HP of every Combatant. 
+                                    The new value will show right after the range button. 
+                                </p>
+                                <img class="guideimg" src="img/nextTurnBtn.png" alt="next turn button">
+                                <p>
+                                    When the turn of the active Combatant is done, Press "Next turn" in the lower left corner (the red one ;)). 
+                                    Now the next Combatant is gray. When the currently HP of a Combatant drops to zero and you press "Next turn" the Combatant get removed from the combat. 
+                                </p>
+                                <img class="guideimg" src="img/changeStatusBtn.png" alt="change status button">
+                                <p>
+                                    When you want to change the status of one Combatant then press "Change Status" right to "Next Turn". 
+                                    The Combat is now paused until you press "Save and return". 
+                                </p>
+                                <img class="guideimg" src="img/changeStatusBtn.png" alt="change status button">
+                                <p>
+                                    In the upper part of the side the status box is now open. 
+                                    Choose the Combatant and change the status. After that press "Save and return". 
+                                    You must do that for each Combatant at ones. 
+                                </p>
+        
+                                <p><em>
+                                One last good advice: F5 clears all! Use it only to begin at Zero. You have been warned! To leave the combat site is the same, sorry guys. I'm working on it.
+                                </p></em>
+                            </details>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <nav class="navbottom">
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="imprint.html">Imprint</a></li>
+                </ul>
+            </nav>
+
+            <addr class="email">
+                <p>combat.assistant@live.at</p>
+            </addr>
+        </footer>
+    </body>
+</html>
