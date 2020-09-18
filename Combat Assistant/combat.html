@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CombatAssistant</title>
+    <meta charset="utf-8" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header>
+        <div class="headerbanner">
+            <h1 id="h1combat">Combat</h1>
+            <br />
+            <h1 id="h1assitent">Assistant</h1>
+        </div>
+
+        <nav class="navtop">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="combat.html" class="aktuell">Combat</a></li>
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+        <!-- To the top button script -->
+        <script src="js/topButton.js"></script>
+        <!-- COMBAT SETUP -->
+        <section class="combatsetup">
+            <h1>
+                Be ready for COMBAT!!
+            </h1>
+            <!-- Dieser Button soll das Setup für den Kampf einblenden und ausblenden können -->
+            <div id="combatsetup">
+                <p>Add your combatants to the combat:</p>
+                <div id="combatsSetupPart1">
+                    <label for="combatantName">Name:</label>
+                    <input type="text" id="combatantName" name="combatanName" placeholder="New combatant">
+
+                    <label for="combatantIni">Initiative:</label>
+                    <input type="number" id="combatantIni" name="combatantIni" min="0" size="4">
+                </div>
+
+                <div id="combatsSetupPart2">
+                    <label for="combatantMaxHp">Max HP:</label>
+                    <input type="number" id="combatantMaxHp" name="combatantMaxHp" min="0" size="4">
+
+                    <label for="combatantCurrentlyHp">Currently HP:</label>
+                    <input type="number" id="combatantCurrentlyHp" name="combatantCurrentlyHp" min="0" size="4">
+                </div>
+
+                <div id="combatsSetupPart3">
+                    <label for="combatantAC">AC:</label>
+                    <input type="number" id="combatantAC" name="combatantAC" min="0" size="3">
+
+                    <input type="radio" id="combatantPC" name="combatantPC" checked="true" onclick="isPC()">
+                    <label for="combatantPC">PC</label>
+
+                    <input type="radio" id="combatantNPC" name="combatantNPC" onclick="isNPC()">
+                    <label for="combatantNPC">NPC</label>
+                </div>
+            </div>
+
+            <div id="combatsetupstatuschange" style="display: none;">
+                <label for="Combatant">Choose a combatant:</label>
+                <select name="Combatant" id="selectCombatant" onchange="selectReloadStatus()">
+
+                </select>
+            </div>
+
+            <ul id="combatsetupstatus" style="display: none;">
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusBlinded" name="combatantStatusBlinded">
+                    <label for="combatantStatusBlinded">Blinded</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusCharmed" name="combatantStatusCharmed">
+                    <label for="combatantStatusCharmed">Charmed</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusDeafened" name="combatantStatusDeafened">
+                    <label for="combatantStatusDeafened">Deafened</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusFrightened"
+                        name="combatantStatusFrightened">
+                    <label for="combatantStatusFrightened">Frightened</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusGrappled" name="combatantStatusGrappled">
+                    <label for="combatantStatusGrappled">Grappled</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusIncapacitated"
+                        name="combatantStatusIncapacitated">
+                    <label for="combatantStatusIncapacitated">Incapacitated</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusInvisible" name="combatantStatusInvisible">
+                    <label for="combatantStatusInvisible">Invisible</label>
+                </li>
+                <br id="combatsetupstatusnewline">
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusParalyzed" name="combatantStatusParalyzed">
+                    <label for="combatantStatusParalyzed">Paralyzed</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusPetrified" name="combatantStatusPetrified">
+                    <label for="combatantStatusPetrified">Petrified</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusPoisoned" name="combatantStatusPoisoned">
+                    <label for="combatantStatusPoisoned">Poisoned</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusProne" name="combatantStatusProne">
+                    <label for="combatantStatusProne">Prone</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusRestrained"
+                        name="combatantStatusRestrained">
+                    <label for="combatantStatusRestrained">Restrained</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusStunned" name="combatantStatusStunned">
+                    <label for="combatantStatusStunned">Stunned</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="status" id="combatantStatusUnconscious"
+                        name="combatantStatusUnconscious">
+                    <label for="combatantStatusUnconscious">Unconscious</label>
+                </li>
+            </ul>
+
+            <button onclick="statusToggle()" id="statusBtn" type="button" title="show or hidde the status">
+                Show Status Options</button>
+
+            <button onclick=addCombatant() id="addCBtn" type="submit">
+                Add combatant</button>
+        </section>
+
+        <button onclick="setupToggle()" id="setupBtn" type="button" title="show or hidde the setup">
+            Hidde setup
+        </button>
+        <!-- COMBAT -->
+        <section class="combat">
+            <div id="combatPart">
+                <div class="combatView">
+                    <!-- 1 -->
+                    <p class="demoCombatant" id="combatViewHeader">Combatants:</p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;" style="display:inline">
+                        <output class="demoCombatantRangeOut" name="x"></output>
+                    </form>
+                    <!-- 2 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;" style="display:inline">
+                        <output class="demoCombatantRangeOut" name="x"></output>
+                    </form>
+                    <!-- 3 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;" style="display:inline">
+                        <output class="demoCombatantRangeOut" name="x"></output>
+                    </form>
+                    <!-- 4 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x"></output>
+                    </form>
+                    <!-- 5 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x"></output>
+                    </form>
+                    <!-- 6 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x"></output>
+                    </form>
+                    <!-- 7 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x"></output>
+                    </form>
+                    <!-- 8 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x" style="display:inline"></output>
+                    </form>
+                    <!-- 9 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x" style="display:inline"></output>
+                    </form>
+                    <!-- 10 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x" style="display:inline"></output>
+                    </form>
+                    <!-- 11 -->
+                    <p class="demoCombatant" style="display: none;"></p>
+                    <form oninput="x.value=a.value">
+                        <input class="demoCombatantRange" id="a" type="range" min="0" max="100" value="100"
+                            style="display: none;">
+                        <output class="demoCombatantRangeOut" name="x" style="display:inline"></output>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <button onclick=startCombatant() id="startCBtn" type="submit" title="start the combat and end the Setup">
+            Start Combat
+        </button>
+        <button onclick=nextTurn() id="nextTurnBtn" type="submit" title="update and show next turn"
+            style="display: none;">
+            Next turn
+        </button>
+        <button onclick=changeStatus() id="changeStatusBtn" type="submit" title="change status of a combatant"
+            style="display: none;">
+            change status
+        </button>
+    </main>
+
+    <footer>
+        <nav class="navbottom">
+            <ul>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="imprint.html">Imprint</a></li>
+            </ul>
+        </nav>
+
+        <addr class="email">
+            <p>combat.assistant@live.at</p>
+        </addr>
+    </footer>
+
+    <script src="js/combat.js"></script>
+
+</body>
+
+</html>

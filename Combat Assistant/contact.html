@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>CombatAssistant</title>
+        <meta charset="utf-8" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <header>
+            <div class="headerbanner">
+                <h1 id="h1combat">Combat</h1>
+                <br />
+                <h1 id="h1assitent">Assistant</h1>
+            </div>
+            <nav class="navtop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="combat.html">Combat</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="contact.html"class="aktuell">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+            <script src="js/topButton.js"></script>
+
+            <section class="comabt">
+                <h1>Do you wanna contact me?</h1>
+                <p>
+                    Here is a small formula for that:
+                </p>
+
+                <div class="containerquestion">
+                    <form action="action_page.php">
+
+                        <label for="uname">Name</label>
+                        <input type="text" id="uname" name="username" placeholder="Your username..">
+
+                        <label for="kindof">Category</label>
+                        <select id="kindof" name="category">
+                            <option value="ca">Comabt Assitent</option>
+                            <option value="dnd">Dungeons and Dragons 5e</option>
+                            <option value="sr5">Shadowrun 5</option>
+                            <option value="unknown">No other category matches</option>
+                        </select>
+
+                        <label for="question">Question</label>
+                        <textarea id="question" name="question" placeholder="Ask something.." style="height:200px"></textarea>
+
+                        <input type="submit" value="Submit">
+
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <nav class="navbottom">
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="imprint.html">Imprint</a></li>
+                </ul>
+            </nav>
+    
+            <addr class="email">
+                <p>combat.assistant@live.at</p>
+            </addr>
+        </footer>
+
+    </body>
+</html>
